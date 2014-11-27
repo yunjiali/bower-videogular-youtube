@@ -118,7 +118,8 @@ angular.module("info.vietnamcode.nampnq.videogular.plugins.youtube", [])
                                 return API.sources;
                             },
                             function(newVal, oldVal) {
-                                onSourceChange(newVal[0].src);
+                                if(typeof newVal !== 'undefined')
+                                    onSourceChange(newVal[0].src);
                             }
                         );
                         scope.$on('$destroy', function() {
